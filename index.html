@@ -23,7 +23,7 @@
 
 	xhr.open("GET", "https://ar.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&titles=Albert%20Einstein&format=json&redirects=");
 	xhr.setRequestHeader("cache-control", "no-cache");
-	xhr.setRequestHeader("Access-Control-Allow-Origin", true);
+	xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
 	xhr.send(data);
 
 
