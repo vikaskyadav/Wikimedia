@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>demo</title>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.2.2.min.js"></script>
+</head>
+<body>
+
+<div id="result" style="color: red"></div>
+
+<script type="text/javascript">
+	
+	var data = null;
+
+	var xhr = new XMLHttpRequest();
+	xhr.withCredentials = true;
+
+	xhr.addEventListener("readystatechange", function () {
+	  if (this.readyState === 4) {
+	    console.log(this.responseText);
+	  }
+	});
+
+	xhr.open("GET", "https://ar.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&titles=Albert%20Einstein&format=json&redirects=");
+	xhr.setRequestHeader("cache-control", "no-cache");
+	xhr.setRequestHeader("Access-Control-Allow-Origin", true);
+	xhr.send(data);
+
+
+	/*let url= 'https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&rvsection=0&titles=Albert%20Einstein';
+*/
+
+
+	/*var getJSON = function(url, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('get', url, true);
+    xhr.responseType = 'json';
+    xhr.onload = function() {
+      var status = xhr.status;
+      if (status == 200) {
+        callback(null, xhr.response);
+      } else {
+        callback(status);
+      }
+    };
+    xhr.send();
+};
+
+
+getJSON('https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&rvsection=0&titles=Albert%20Einstein', function(err, data) {
+  if (err != null) {
+    alert('Something went wrong: ' + err);
+  } else {
+    alert('Your Json result is:  ' + data.result);
+    result.innerText = data.result;
+  }
+});*/
+</script>
+</body>
+</html>
